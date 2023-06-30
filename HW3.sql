@@ -20,6 +20,11 @@ select employee_name, monthly_salary from
 employees full outer join employee_salary on employee_salary.employee_id = employees.id
 		  full outer join salary on salary.id = employee_salary.salary_id
 where monthly_salary < 2000 and employee_name is null;
+-- or
+select employee_name, monthly_salary from
+employees right join employee_salary on employee_salary.employee_id = employees.id
+		  right join salary on salary.id = employee_salary.salary_id
+where monthly_salary < 2000 and employee_name is null;
 
 --5. Найти всех работников кому не начислена ЗП.
 select employee_name, monthly_salary from
